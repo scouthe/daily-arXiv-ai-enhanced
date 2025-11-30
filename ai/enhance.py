@@ -68,13 +68,16 @@ def process_single_item(chain, item: Dict, language: str) -> Dict:
         "motivation": "Motivation analysis unavailable",
         "method": "Method extraction failed",
         "result": "Result analysis unavailable",
-        "conclusion": "Conclusion extraction failed"
+        "conclusion": "Conclusion extraction failed",
+        "chinese_title": "Title translation failed",
+        "chinese_abstract": "Abstract translation failed"
     }
     
     try:
         response: Structure = chain.invoke({
             "language": language,
-            "content": item['summary']
+            "title": item['title'],
+            "abstract": item['summary']
         })
         item['AI'] = response.model_dump()
     except langchain_core.exceptions.OutputParserException as e:

@@ -1,4 +1,9 @@
-Please analyze the following abstract of papers. 
+Please analyze the following paper information and provide the requested analysis.
 
-Content:
-{content}
+Paper Title:
+{title}
+
+Paper Abstract:
+{abstract}
+
+Please provide:
