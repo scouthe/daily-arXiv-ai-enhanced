@@ -38,14 +38,9 @@ jobs:
         fi
         
         cd daily_arxiv
-        # 使用更可靠的方式设置环境变量，避免bash解析问题
-        export OPENAI_API_KEY="${{ secrets.OPENAI_API_KEY }}"
-        export OPENAI_BASE_URL="${{ secrets.OPENAI_BASE_URL }}"
+        export OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+        export OPENAI_BASE_URL=${{ secrets.OPENAI_BASE_URL }}
         export LANGUAGE="${{ vars.LANGUAGE }}"
-<<<<<<< HEAD
-        # 使用单引号包裹以确保值被原样处理
-=======
->>>>>>> 0d118dcee19565cb86b3198793f0a4151ddad20b
         export CATEGORIES='${{ vars.CATEGORIES }}'
         export MODEL_NAME="${{ vars.MODEL_NAME }}"
         
@@ -109,10 +104,6 @@ jobs:
         echo "开始AI增强处理... / Starting AI enhancement processing..."
         
         cd ai
-<<<<<<< HEAD
-        # 使用更可靠的方式设置环境变量
-=======
->>>>>>> 0d118dcee19565cb86b3198793f0a4151ddad20b
         export OPENAI_API_KEY="${{ secrets.OPENAI_API_KEY }}"
         export OPENAI_BASE_URL="${{ secrets.OPENAI_BASE_URL }}"
         export LANGUAGE="${{ vars.LANGUAGE }}"
